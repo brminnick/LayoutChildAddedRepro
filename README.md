@@ -1,5 +1,5 @@
 # LayoutChildAddedRepro
-A .NET MAUI RC1 reproduction sample for `Layout.ChildAdded`.
+A .NET MAUI 6.0.100 reproduction sample for `Layout.ChildAdded`.
  
 ## Bug Description
 The  `Layout.ChildAdded` event does not fire when an `IView` is added to a `Layout` like a `Grid` or a `StackLayout`.
