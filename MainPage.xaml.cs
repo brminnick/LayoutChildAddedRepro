@@ -27,7 +27,7 @@ namespace LayoutChildAddedRepro
 
 		async void HandleChildAdded(object sender, ElementEventArgs e)
 		{
-			await DisplayAlert("Child Added", e.Element.GetType().FullName, "OK");
+			await DisplayAlert("Child Added", $"Added a {e.Element.GetType().FullName}", "OK");
 		}
 
 		private void OnCounterClicked(object sender, EventArgs e)
