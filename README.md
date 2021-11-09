@@ -15,7 +15,7 @@ protected override void OnAppearing()
   stackLayout.Children.Add(new BoxView()); // `ChildAdded` does not fire
 }
 
-// Event Handler Does Not Execute because `ChildAdded` does not fire
+// This Event Handler Does Not Execute because `ChildAdded` does not fire
 async void HandleChildAdded(object sender, ElementEventArgs e) =>
  await DisplayAlert("Child Added", $"Added a {e.Element.GetType().FullName}", "OK");
 ```
