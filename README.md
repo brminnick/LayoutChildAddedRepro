@@ -22,7 +22,7 @@ async void HandleChildAdded(object sender, ElementEventArgs e) =>
 
 ## Reproduction Steps
 0. [Install .NET MAUI](https://docs.microsoft.com/dotnet/maui/get-started/installation?WT.mc_id=mobile-0000-bramin)
-1. Download/Clone this repo
+1. Download/Clone this repo: https://github.com/brminnick/LayoutChildAddedRepro
 2. In `MainPage.xaml`, confirm [`ChildAdded` is subscribed to `HandleChildAdded`](https://github.com/brminnick/LayoutChildAddedRepro/blob/f8447fb97dd1926395ff30821cd76948906f31c0/MainPage.xaml#L8)
 3. In `MainPage.xaml.cs`, confirm [`OnAppearing` triggers `await DisplayAlert("OnAppearing Fired", "Click OK to add a Green Box View", "OK");`](https://github.com/brminnick/LayoutChildAddedRepro/blob/5ab4b08f25d7b4f920f751c78ec821e177dabb2c/MainPage.xaml.cs#L22)
 4. In `MainPage.OnAppearing`, confirm a [green `BoxView` is added to the `Grid](https://github.com/brminnick/LayoutChildAddedRepro/blob/5ab4b08f25d7b4f920f751c78ec821e177dabb2c/MainPage.xaml.cs#L28)
