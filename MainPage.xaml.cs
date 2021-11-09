@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Essentials;
 using Microsoft.Maui.Graphics;
@@ -14,9 +15,11 @@ namespace LayoutChildAddedRepro
 			InitializeComponent();
 		}
 
-		protected override void OnAppearing()
+		protected override async void OnAppearing()
 		{
 			base.OnAppearing();
+
+			await DisplayAlert("OnAppearing Fired", "Click OK to add a Green Box View", "OK");
 
 			var greenBox = new BoxView { BackgroundColor = Colors.Green };
 			GridLayout.SetRow(greenBox, 1);
@@ -30,7 +33,7 @@ namespace LayoutChildAddedRepro
 			await DisplayAlert("Child Added", $"Added a {e.Element.GetType().FullName}", "OK");
 		}
 
-		private void OnCounterClicked(object sender, EventArgs e)
+		void OnCounterClicked(object sender, EventArgs e)
 		{
 			count++;
 			CounterLabel.Text = $"Current count: {count}";
