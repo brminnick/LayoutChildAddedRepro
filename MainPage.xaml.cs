@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Essentials;
+using Microsoft.Maui.Graphics;
 
 namespace LayoutChildAddedRepro
 {
@@ -11,6 +12,22 @@ namespace LayoutChildAddedRepro
 		public MainPage()
 		{
 			InitializeComponent();
+		}
+
+		protected override void OnAppearing()
+		{
+			base.OnAppearing();
+
+			var greenBox = new BoxView { BackgroundColor = Colors.Green };
+			GridLayout.SetRow(greenBox, 1);
+			GridLayout.SetColumn(greenBox, 0);
+
+			MainGrid.Add(greenBox);
+		}
+
+		async void HandleChildAdded(object sender, ElementEventArgs e)
+		{
+			await DisplayAlert("Child Added", e.Element.GetType().FullName, "OK");
 		}
 
 		private void OnCounterClicked(object sender, EventArgs e)
