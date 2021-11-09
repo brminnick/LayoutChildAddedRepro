@@ -7,12 +7,12 @@ The  `Layout.ChildAdded` event does not fire when an `IView` is added to a `Layo
 ```cs
 protected override void OnAppearing()
 {
- base.OnAppearing();
+  base.OnAppearing();
 
- var stackLayout = new StackLayout();
- stackLayout.ChildAdded += HandleChildAdded
+  var stackLayout = new StackLayout();
+  stackLayout.ChildAdded += HandleChildAdded
     
- stackLayout.Children.Add(new BoxView()); // `ChildAdded` does not fire
+  stackLayout.Children.Add(new BoxView()); // `ChildAdded` does not fire
 }
 
 // Event Handler Does Not Execute because `ChildAdded` does not fire
